@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="definitions_1pfhbd4" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision" name="Recommand  Medicine">
+    <extensionElements>
+      <biodi:bounds x="200" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Type of problem">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0jqkz0b" label="Age">
+        <inputExpression id="LiteralExpression_1ke8o1h" typeRef="integer" />
+      </input>
+      <output id="output1" label="Recommandation" name="" typeRef="string" />
+      <rule id="row-338207722-1">
+        <description>3 months</description>
+        <inputEntry id="UnaryTests_1i1iz8j">
+          <text><![CDATA["Headache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03lg4bz">
+          <text><![CDATA[<= 3]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r9y5ea">
+          <text><![CDATA["No medicine "]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-2">
+        <description>3 months till 6 year</description>
+        <inputEntry id="UnaryTests_0piae03">
+          <text><![CDATA["Headache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0plev8d">
+          <text>[3..6]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13svkda">
+          <text><![CDATA["Aligifor"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-3">
+        <inputEntry id="UnaryTests_02zknez">
+          <text><![CDATA["Headache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11qzh2z">
+          <text>[7..20]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ayxfyt">
+          <text><![CDATA["Aspirin 125 mg"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-4">
+        <inputEntry id="UnaryTests_1qe2vuz">
+          <text><![CDATA["Headache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kychoq">
+          <text><![CDATA[> 20]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13n7h6z">
+          <text><![CDATA["Aspirin 250 mg"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-5">
+        <description>Infant</description>
+        <inputEntry id="UnaryTests_0x160v8">
+          <text><![CDATA["Backache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ydbv8i">
+          <text><![CDATA[<= 2]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vy2f3q">
+          <text><![CDATA["No medicine just recommand sleep or coldpack"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-6">
+        <inputEntry id="UnaryTests_1h552mm">
+          <text><![CDATA["Backache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q4rvbk">
+          <text><![CDATA[> 6]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ocs7v4">
+          <text><![CDATA["coldpack or Relief spray  or Tiger bam or Belt ,Daflgon 125 mg"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-7">
+        <inputEntry id="UnaryTests_1ektyup">
+          <text><![CDATA["Backache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_196n78a">
+          <text>[3..6]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v3xhgx">
+          <text><![CDATA["Coldpack, or Relief spray or Tiger bam or Belt"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-9">
+        <description>Infant</description>
+        <inputEntry id="UnaryTests_0xbexr6">
+          <text><![CDATA["Neck Sprain"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oegdgh">
+          <text><![CDATA[<= 2]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nefum5">
+          <text><![CDATA["No medicine just remmand sleep or cold pack"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-10">
+        <description></description>
+        <inputEntry id="UnaryTests_18zyzfv">
+          <text><![CDATA["Neck Sprain"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bkayit">
+          <text>[3..6]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03x71mc">
+          <text><![CDATA["Relief sparay or Neck belt or Tiger bam"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-11">
+        <inputEntry id="UnaryTests_17sgua8">
+          <text><![CDATA["Neck Sprain"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kkxdt1">
+          <text><![CDATA[> 6]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c1qk5m">
+          <text><![CDATA["coldpack or Relief spray  or Tiger bam or Belt ,Daflgon 125 mg"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-12">
+        <description>Infants</description>
+        <inputEntry id="UnaryTests_1fo76rw">
+          <text><![CDATA["Cold"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v79hi8">
+          <text><![CDATA[<= 2]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0esi779">
+          <text><![CDATA["Steam or Nasal spray or saline water or Green Tea"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-13">
+        <inputEntry id="UnaryTests_1g3rlvt">
+          <text><![CDATA["Cold"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lhxd40">
+          <text>[3..6]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dyw1l9">
+          <text><![CDATA["Steam or Nasal spray or saline water or Green Tea Or Aligifor"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-338207722-14">
+        <inputEntry id="UnaryTests_0kfmq31">
+          <text><![CDATA["Cold"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qov29g">
+          <text><![CDATA[> 6]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jx5e2t">
+          <text><![CDATA["Aspirin 125 mg,,Steam or Nasal spray or saline water or Green Tea or Daflgon"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
