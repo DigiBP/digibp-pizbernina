@@ -31,13 +31,9 @@
       <bpmn:dataInputAssociation />
       <bpmn:dataInputAssociation id="DataInputAssociation_07jmd7q">
         <bpmn:sourceRef>DataStoreReference_0wqrwb2</bpmn:sourceRef>
-        <bpmn:targetRef>undefined</bpmn:targetRef>
       </bpmn:dataInputAssociation>
     </bpmn:businessRuleTask>
     <bpmn:dataStoreReference id="DataStoreReference_0wqrwb2" />
-    <bpmn:endEvent id="EndEvent_1gwv403">
-      <bpmn:incoming>SequenceFlow_1iahnpl</bpmn:incoming>
-    </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1t2kftr" sourceRef="StartEvent_1317lri" targetRef="Task_1v8x32q" />
     <bpmn:sequenceFlow id="SequenceFlow_1i8fllp" sourceRef="Task_1v8x32q" targetRef="Task_0mc6im3" />
     <bpmn:sequenceFlow id="SequenceFlow_09yfb4w" sourceRef="Task_0mc6im3" targetRef="Task_07djoeb" />
@@ -59,6 +55,9 @@
         <bpmn:targetRef>DataStoreReference_0wqrwb2</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:manualTask>
+    <bpmn:endEvent id="EndEvent_1gwv403">
+      <bpmn:incoming>SequenceFlow_1iahnpl</bpmn:incoming>
+    </bpmn:endEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_04dd7w1">
@@ -130,16 +129,18 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="EndEvent_1gwv403_di" bpmnElement="EndEvent_1gwv403">
-        <dc:Bounds x="920.5974796145292" y="443" width="36" height="36" />
+        <dc:Bounds x="937" y="443" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="938.5974796145292" y="483" width="0" height="12" />
+          <dc:Bounds x="910" y="483" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1iahnpl_di" bpmnElement="SequenceFlow_1iahnpl">
         <di:waypoint xsi:type="dc:Point" x="867" y="461" />
-        <di:waypoint xsi:type="dc:Point" x="921" y="461" />
+        <di:waypoint xsi:type="dc:Point" x="898" y="461" />
+        <di:waypoint xsi:type="dc:Point" x="898" y="461" />
+        <di:waypoint xsi:type="dc:Point" x="937" y="461" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="894" y="440" width="0" height="12" />
+          <dc:Bounds x="868" y="455" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="BusinessRuleTask_07m1jq5_di" bpmnElement="Task_07djoeb">
