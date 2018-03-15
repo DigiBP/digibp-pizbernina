@@ -165,7 +165,7 @@
       </rule>
       <rule id="row-607416400-1">
         <inputEntry id="UnaryTests_13pv2z4">
-          <text><![CDATA["TB"]]></text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_01dd4bb">
           <text></text>
@@ -274,6 +274,28 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1uodv8w">
           <text><![CDATA["Take  Magesium tablets or poweder, use medical stockins ..recoonamd for exercises and yoga or also add intake of garlic in your food "]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-989407524-1">
+        <inputEntry id="UnaryTests_02m59xn">
+          <text><![CDATA["Eye redness"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qauyjc">
+          <text><![CDATA[<= 6]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00vpqij">
+          <text><![CDATA["Clean from saliaine water or frequently wash from cold water"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-989407524-2">
+        <inputEntry id="UnaryTests_09r6n1v">
+          <text><![CDATA["Eye redness"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lnmghu">
+          <text><![CDATA[> 6]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_172ei74">
+          <text><![CDATA["lubricating and antihistamine eye drops can provide relief in most cases. Taking OTC antihistamines such as Zyrtec, Claritin or Benadryl also can help or else clean from saliaine water or frequently wash from cold water"]]></text>
         </outputEntry>
       </rule>
     </decisionTable>
