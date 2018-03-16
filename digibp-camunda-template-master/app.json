@@ -1,5 +1,5 @@
 {
-  "name": "digibp-camunda-template",
+  "name": "digibp-pizbernina",
   "description": "digibp-microflow",
   "repository": "https://github.com/DigiBP/digibp-camunda-template/tree/master",
   "addons": ["heroku-postgresql:hobby-dev"],
