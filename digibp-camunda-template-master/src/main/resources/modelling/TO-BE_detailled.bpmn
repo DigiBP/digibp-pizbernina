@@ -107,9 +107,6 @@
         <bpmn:targetRef>DataStoreReference_18img0r</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:task>
-    <bpmn:startEvent id="StartEvent_1" name="Call received">
-      <bpmn:outgoing>SequenceFlow_0r23rae</bpmn:outgoing>
-    </bpmn:startEvent>
     <bpmn:task id="Task_0zup7ml" name="Do nothing">
       <bpmn:incoming>SequenceFlow_0awmk93</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0bxrwiy</bpmn:outgoing>
@@ -118,11 +115,6 @@
       <bpmn:incoming>SequenceFlow_0wlgrtx</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_19l1xle</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:inclusiveGateway id="ExclusiveGateway_1yt2qql">
-      <bpmn:incoming>SequenceFlow_12hz3bf</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_18okuuh</bpmn:outgoing>
-      <bpmn:outgoing>SequenceFlow_1k9zyin</bpmn:outgoing>
-    </bpmn:inclusiveGateway>
     <bpmn:inclusiveGateway id="ExclusiveGateway_1wkjccc" name="Are drugs needed?">
       <bpmn:incoming>SequenceFlow_0c3pmr3</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0sll42o</bpmn:outgoing>
@@ -172,11 +164,6 @@
     <bpmn:sequenceFlow id="SequenceFlow_0bxrwiy" sourceRef="Task_0zup7ml" targetRef="ExclusiveGateway_05nzfp8" />
     <bpmn:sequenceFlow id="SequenceFlow_0wlgrtx" name="No" sourceRef="ExclusiveGateway_1wkjccc" targetRef="Task_1nflsve" />
     <bpmn:sequenceFlow id="SequenceFlow_19l1xle" sourceRef="Task_1nflsve" targetRef="ExclusiveGateway_0iot04u" />
-    <bpmn:inclusiveGateway id="ExclusiveGateway_1hb161c" name="Ambulance needed">
-      <bpmn:incoming>SequenceFlow_019yxgl</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0obev6b</bpmn:outgoing>
-      <bpmn:outgoing>SequenceFlow_02eeqhm</bpmn:outgoing>
-    </bpmn:inclusiveGateway>
     <bpmn:task id="Task_0vwpga2" name="Organize Ambulance">
       <bpmn:incoming>SequenceFlow_0obev6b</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1wnzoyu</bpmn:outgoing>
@@ -202,7 +189,22 @@
       <bpmn:incoming>SequenceFlow_1e3uluq</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0jo5bah</bpmn:outgoing>
     </bpmn:task>
+    <bpmn:startEvent id="StartEvent_1" name="Call received">
+      <bpmn:outgoing>SequenceFlow_0r23rae</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="Message_1yx3l0f" />
+    </bpmn:startEvent>
+    <bpmn:inclusiveGateway id="ExclusiveGateway_1hb161c" name="Ambulance needed">
+      <bpmn:incoming>SequenceFlow_019yxgl</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_02eeqhm</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_0obev6b</bpmn:outgoing>
+    </bpmn:inclusiveGateway>
+    <bpmn:inclusiveGateway id="ExclusiveGateway_1yt2qql">
+      <bpmn:incoming>SequenceFlow_12hz3bf</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1k9zyin</bpmn:outgoing>
+      <bpmn:outgoing>SequenceFlow_18okuuh</bpmn:outgoing>
+    </bpmn:inclusiveGateway>
   </bpmn:process>
+  <bpmn:message id="Message_1yx3l0f" name="Message_1f5ipi9" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0c7mkoz">
       <bpmndi:BPMNShape id="Participant_079cj9k_di" bpmnElement="Participant_079cj9k">
@@ -289,12 +291,6 @@
       <bpmndi:BPMNShape id="Task_08tvxf5_di" bpmnElement="Task_08tvxf5">
         <dc:Bounds x="143" y="673" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
-        <dc:Bounds x="50" y="695" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="36" y="731" width="64" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_0zup7ml_di" bpmnElement="Task_0zup7ml">
         <dc:Bounds x="1859" y="785" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -303,18 +299,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Task_10c1v7r_di" bpmnElement="Task_10c1v7r">
         <dc:Bounds x="868" y="321" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="InclusiveGateway_0w3b63c_di" bpmnElement="ExclusiveGateway_1yt2qql">
-        <dc:Bounds x="464" y="688" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="444" y="742" width="90" height="12" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="InclusiveGateway_1hrian2_di" bpmnElement="ExclusiveGateway_1hb161c">
-        <dc:Bounds x="754" y="443" width="50" height="50" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="750" y="497" width="57" height="24" />
-        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="InclusiveGateway_1ibk6ay_di" bpmnElement="ExclusiveGateway_06eldah">
         <dc:Bounds x="1026" y="443" width="50" height="50" />
@@ -553,14 +537,14 @@
         <di:waypoint xsi:type="dc:Point" x="395" y="713" />
         <di:waypoint xsi:type="dc:Point" x="464" y="713" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="385" y="692" width="90" height="12" />
+          <dc:Bounds x="384.5" y="692" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0r23rae_di" bpmnElement="SequenceFlow_0r23rae">
         <di:waypoint xsi:type="dc:Point" x="86" y="713" />
         <di:waypoint xsi:type="dc:Point" x="143" y="713" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="70" y="692" width="90" height="12" />
+          <dc:Bounds x="69.5" y="692" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_0awmk93_di" bpmnElement="SequenceFlow_0awmk93">
@@ -626,10 +610,10 @@
         <dc:Bounds x="0" y="1595" width="2545" height="161" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_03wr85f_di" bpmnElement="MessageFlow_03wr85f">
-        <di:waypoint xsi:type="dc:Point" x="67" y="252" />
+        <di:waypoint xsi:type="dc:Point" x="67" y="250" />
         <di:waypoint xsi:type="dc:Point" x="67" y="695" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="82" y="467.5" width="0" height="12" />
+          <dc:Bounds x="37" y="466.5" width="90" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_1es9hu6_di" bpmnElement="MessageFlow_1es9hu6">
@@ -709,6 +693,24 @@
           <dc:Bounds x="2279" y="1089.5" width="0" height="12" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="StartEvent_19z7spy_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="50" y="695" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="36" y="731" width="64" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="InclusiveGateway_1ous8ao_di" bpmnElement="ExclusiveGateway_1hb161c">
+        <dc:Bounds x="754" y="443" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="750" y="497" width="57" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="InclusiveGateway_1djab1w_di" bpmnElement="ExclusiveGateway_1yt2qql">
+        <dc:Bounds x="464" y="688" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="444" y="742" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
