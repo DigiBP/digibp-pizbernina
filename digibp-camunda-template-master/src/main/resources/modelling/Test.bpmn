@@ -31,10 +31,10 @@
       <bpmn:outgoing>SequenceFlow_1u71vwv</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_1486fc7" />
     </bpmn:startEvent>
-    <bpmn:userTask id="Task_1exox1g" name="Do A" camunda:assignee="demo">
+    <bpmn:userTask id="Task_1exox1g" name="Do A" camunda:candidateUsers="Worker">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="Value_X" label="Value of X" type="enum" defaultValue="0" />
+          <camunda:formField id="Value_X" label="Value of X" type="string" defaultValue="0" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_1ruzs6b</bpmn:incoming>
@@ -43,7 +43,7 @@
     <bpmn:userTask id="Task_1wkvgk4" name="Do B" camunda:assignee="demo">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="Value_X" label="Value of X" type="enum" defaultValue="0" />
+          <camunda:formField id="Value_X" label="Value of X" type="string" defaultValue="0" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_09ntf6a</bpmn:incoming>
@@ -52,7 +52,7 @@
     <bpmn:userTask id="Task_1bw26vi" name="Do C" camunda:assignee="demo">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="Value_X" label="Value of X" type="enum" defaultValue="0" />
+          <camunda:formField id="Value_X" label="Value of X" type="string" defaultValue="0" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_09fr0wu</bpmn:incoming>
