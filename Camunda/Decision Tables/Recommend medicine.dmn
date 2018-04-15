@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_1pfhbd4" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
-  <decision id="Recommand_medicine" name="Recommand  Medicine">
+  <decision id="Recommend_medicine" name="Recommend_Medicine">
     <extensionElements>
       <biodi:bounds x="200" y="200" width="180" height="80" />
     </extensionElements>
     <decisionTable id="decisionTable">
-      <input id="input1" label="Type of problem" camunda:inputVariable="">
+      <input id="input1" label="typeofproblem" camunda:inputVariable="">
         <inputExpression id="inputExpression1" typeRef="string">
           <text>typeofproblem</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0jqkz0b" label="Age" camunda:inputVariable="">
+      <input id="InputClause_0jqkz0b" label="age" camunda:inputVariable="">
         <inputExpression id="LiteralExpression_1ke8o1h" typeRef="long">
           <text>age</text>
         </inputExpression>
       </input>
-      <output id="output1" label="Recommandation" name="recommandationn" typeRef="string" />
+      <output id="output1" label="recommendation" name="recommendation" typeRef="string">
+        <outputValues id="UnaryTests_0tau9s3">
+          <text><![CDATA["Nomedicine","Aligifor","Sleep/coldpack","Coldpack/Reliefspray/Daflgon125mg"]]></text>
+        </outputValues>
+      </output>
       <rule id="row-338207722-1">
         <description>3 months</description>
         <inputEntry id="UnaryTests_1i1iz8j">
@@ -25,7 +29,7 @@
           <text><![CDATA[<= 3]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1r9y5ea">
-          <text><![CDATA["No medicine "]]></text>
+          <text><![CDATA["Nomedicine"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-338207722-2">
@@ -49,7 +53,7 @@
           <text><![CDATA[<= 2]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1vy2f3q">
-          <text><![CDATA["No medicine just recommand sleep or coldpack"]]></text>
+          <text><![CDATA["Sleep/coldpack"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-338207722-6">
@@ -60,7 +64,7 @@
           <text><![CDATA[> 2]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ocs7v4">
-          <text><![CDATA["coldpack or Relief spray  or Tiger bam or Belt ,Daflgon 125 mg"]]></text>
+          <text><![CDATA["Coldpack/Reliefspray/Daflgon125mg"]]></text>
         </outputEntry>
       </rule>
     </decisionTable>

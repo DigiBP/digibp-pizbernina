@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_0deemhj" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_3" name="Ambulance_Required">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="ambulancerequired" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>ambulancerequired</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="action2" name="action2" typeRef="string">
+        <outputValues id="UnaryTests_0ndcncs">
+          <text><![CDATA["organizeambulance","donothing"]]></text>
+        </outputValues>
+      </output>
+      <rule id="row-700599379-3">
+        <description></description>
+        <inputEntry id="UnaryTests_06dq5ah">
+          <text><![CDATA["Yes"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xnuk41">
+          <text><![CDATA["organizeambulance"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-700599379-4">
+        <inputEntry id="UnaryTests_01z0knl">
+          <text><![CDATA["No"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18dfwwg">
+          <text><![CDATA["donothing"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

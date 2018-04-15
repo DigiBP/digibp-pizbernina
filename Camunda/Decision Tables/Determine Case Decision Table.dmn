@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_0q08mop" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_2" name="Determine_the_Case">
+    <extensionElements>
+      <biodi:bounds x="498" y="291" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable">
+      <input id="input1" label="majorsymptom" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>majorsymptom</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_037glnw">
+          <text><![CDATA["Persistent Cough","Stomach Pain","Severe headache","Fatigue","Chest pain","Tooth ache","Fever","Yellow tinge to skin","Raised itchy bumps","Itchy skin","Facial pain","Joint pain","Joint redness","Joint stiffness","Blurred vision","Increasing difficulty with vision at night","sensitivity to light and glare"]]></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_1dguti1" label="illnesssince" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_025pp5o" typeRef="string">
+          <text>illnesssince</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ror3nb" label="patientpregnant" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0hyndni" typeRef="string">
+          <text>patientpregnant</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_0grfzev">
+          <text><![CDATA["Yes","No"]]></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0dvwcd2" label="Othersymptoms" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1xn6cif" typeRef="string">
+          <text>Othersymptoms</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1ozewg7">
+          <text><![CDATA["Weight loss","Appetite Loss","Fever","Coughing up blood","Night Sweats","Not wanting to eat because of pain","Nausea","bloating","acid reflex","Burning sensation in chest","Difficulty breathing","Dizziness","Pale stools","Dark urine","Itchiness","Fatigue","Abdominal pain","Blanching","Body rashes","Thickened and scaly skin","Sore throat","cough","feeling of nasal stuffiness","yellowish-greenish nasal discharge with odor","Joint deformity","Loss of joint range of motion","Double vision in a single eye"]]></text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0veuiin" label="illnessseverityscale" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_19z08ia" typeRef="string">
+          <text>illnessseverityscale</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0j6xc0j" label="advicetopatient" name="advicetopatient" typeRef="string">
+        <outputValues id="UnaryTests_0cl5u3e">
+          <text><![CDATA["advicefromhuman","recommendon-prescriptiondrug","providedoctorsscheduletothepatienttobookappointment"]]></text>
+        </outputValues>
+      </output>
+      <rule id="row-870480420-3">
+        <inputEntry id="UnaryTests_1kduzh9">
+          <text><![CDATA["Persistent Cough"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rmwg1b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y7uvo7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0erz3i1">
+          <text><![CDATA["Coughingupblood"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15h76tp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18x3pfe">
+          <text><![CDATA["advicefromhuman"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10bicr7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dmo249">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0489kik">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h02h5c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x0tfx8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17n7h63">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0odtu2x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06vfe6i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09qmj18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03m85yp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b73h9u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f4ikct">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-870480420-4">
+        <inputEntry id="UnaryTests_1775kva">
+          <text><![CDATA["Stomach Pain"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sm0gdh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_011gen4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c73gjn">
+          <text><![CDATA["Weight loss", "Not wanting to eat because of pain", "Nausea", "bloating", "acid reflex", "Burning sensation in chest"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17dytbp">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-5">
+        <description></description>
+        <inputEntry id="UnaryTests_1l5tqsw">
+          <text><![CDATA["Stomach Pain"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sgme4r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wxls5y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19cuosw">
+          <text><![CDATA[not("Weight loss", "Not wanting to eat because of pain", "Nausea", "bloating", "acid reflex", "Burning sensation in chest")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11gsxhl">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-6">
+        <inputEntry id="UnaryTests_1601ruz">
+          <text><![CDATA["Severe headache", "Fatigue", "Chest pain", "Blurred vision"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wdlrqp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02k0la6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xqnfgq">
+          <text><![CDATA["Difficulty breathing", "Dizziness", "Weight loss", "Appetite Loss", "Fever", "Coughing up blood", "Night Sweats", "Not wanting to eat because of pain", "Nausea", "bloating", "acid reflex", "Burning sensation in chest", "Pale stools", "Dark urine", "Itchiness", "Fatigue", "Abdominal pain", "Blanching", "Body rashes", "Thickened and scaly skin", "Sore throat", "cough", "feeling of nasal stuffiness", "yellowish-greenish nasal discharge with odor", "Joint deformity", "Loss of joint range of motion", "Double vision in a single eye"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a5bcv5">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-7">
+        <inputEntry id="UnaryTests_0wq8l7s">
+          <text><![CDATA["Tooth ache"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08qfoiy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l445jo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xlzj6t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hkar81">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10ne1kf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xpe26y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06hyvo7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pq5ygq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01bz3v7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hmtk8n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d5u0ly">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-8">
+        <inputEntry id="UnaryTests_09vqe9f">
+          <text><![CDATA["Fever", "Yellow tinge to skin"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q0pfvr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h0ief1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oqpqjo">
+          <text><![CDATA["Pale stools", "Dark urine", "Itchiness", "Fatigue", "Abdominal pain", "Nausea", "Weight loss"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19fq1oz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k9u43b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ypk8gi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dw0q3k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e4vmim">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mb481d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02s1ejn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13kh6tv">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-9">
+        <inputEntry id="UnaryTests_1q03ooq">
+          <text><![CDATA["Raised itchy bumps"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02ui5to">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0su1ai2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xdueue">
+          <text><![CDATA["Blanching"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1069xly">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a111si">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03eahg7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ao9hfv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c0pi3f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y61gnw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u6vvbv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17f03wi">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-10">
+        <inputEntry id="UnaryTests_0agb11s">
+          <text><![CDATA["Raised itchy bumps"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f7urfo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c0vzae">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f71ixs">
+          <text><![CDATA[not("Burning sensation in chest", "Difficulty breathing", "Dizziness", "Pale stools", "Dark urine", "Itchiness", "Fatigue", "Abdominal pain", "Body rashes", "Thickened and scaly skin", "Sore throat", "cough", "feeling of nasal stuffiness", "yellowish-greenish nasal discharge with odor", "Joint deformity", "Loss of joint range of motion", "Double vision in a single eye", "acid reflex", "bloating", "Not wanting to eat because of pain", "Nausea", "Night Sweats", "Coughing up blood", "Fever", "Appetite Loss", "Weight loss", "Blanching")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0duxxhx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ifobk7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rvcnjo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05ajcme">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0reaezd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sgytiy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vwjycg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z9caa9">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-11">
+        <inputEntry id="UnaryTests_03m1k06">
+          <text><![CDATA["Itchy skin"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e3hpeh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lwk9jg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nq6mu6">
+          <text><![CDATA["Body rashes", "Thickened and scaly skin"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p7zda8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00guf43">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_078bmnh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14eub6w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0epo1ky">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qysh7p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04sob80">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bzspz7">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-12">
+        <inputEntry id="UnaryTests_0ywb98z">
+          <text><![CDATA["Itchy skin"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ga1rd8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lxbgme">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lz7172">
+          <text><![CDATA[not("Weight loss", "Appetite Loss", "Fever", "Coughing up blood", "Night Sweats", "Not wanting to eat because of pain", "Nausea", "bloating", "acid reflex", "Burning sensation in chest", "Difficulty breathing", "Dizziness", "Pale stools", "Dark urine", "Itchiness", "Fatigue", "Abdominal pain", "Blanching", "Sore throat", "cough", "feeling of nasal stuffiness", "yellowish-greenish nasal discharge with odor", "Joint deformity", "Loss of joint range of motion", "Double vision in a single eye")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g9qbh2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pgf6o9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z6y1vc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oeb9ie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iqv3fr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hjzist">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jm6jyz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17xszd1">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-13">
+        <inputEntry id="UnaryTests_1bj729y">
+          <text><![CDATA["Facial pain", "Fever"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17uip85">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ekiqv6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y0c2ed">
+          <text><![CDATA["Sore throat", "cough", "feeling of nasal stuffiness", "yellowish-greenish nasal discharge with odor"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18oarxf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10k6jmy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qh99ie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19b0psq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ecoed1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gxsbkr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03huiws">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b90lst">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-14">
+        <inputEntry id="UnaryTests_0e90hf2">
+          <text><![CDATA["Facial pain", "Fever"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jh8inh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19uf7py">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kd1y0x">
+          <text><![CDATA[not("Weight loss", "Appetite Loss", "Fever", "Coughing up blood", "Night Sweats", "Not wanting to eat because of pain", "Nausea", "bloating", "acid reflex", "Burning sensation in chest", "Difficulty breathing", "Dizziness", "Pale stools", "Dark urine", "Itchiness", "Fatigue", "Abdominal pain", "Blanching", "Body rashes", "Thickened and scaly skin", "Sore throat", "cough", "feeling of nasal stuffiness", "yellowish-greenish nasal discharge with odor", "Joint deformity", "Loss of joint range of motion", "Double vision in a single eye")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h89jd5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_029byiv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b30dzs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uq6p3l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_118kack">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jyvz3o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14gkji1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_186qg71">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-15">
+        <inputEntry id="UnaryTests_0k4obor">
+          <text><![CDATA["Joint pain", "Joint redness", "Joint stiffness"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18os8mj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n317r7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_129eiyz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h3ge0f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_130p8ky">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03jsyni">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vv7vp3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nyi4z8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g8t6wg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s1tymm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cjbuyn">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-16">
+        <inputEntry id="UnaryTests_02alpc2">
+          <text><![CDATA["sensitivity to light and glare", "Increasing difficulty with vision at night", "Blurred vision"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e117px">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iodfv6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17asv68">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ghnlu5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l05mro">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_021pmp2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14lvxsm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nxh6m8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m5c1qm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lcodn8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e167yo">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-18">
+        <inputEntry id="UnaryTests_1ug0olc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ablexi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0anizgz">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qr8rjn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a6ry82">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-19">
+        <inputEntry id="UnaryTests_0hk6due">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08isd50">
+          <text><![CDATA[>= 15]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1esz290">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p9jwl1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nwdj6h">
+          <text></text>
+        </inputEntry>
+      </rule>
+      <rule id="row-870480420-20">
+        <inputEntry id="UnaryTests_02d2uo2">
+          <text><![CDATA["Fever", "Yellow tinge to skin"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlh9li">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n87fpg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ur9hgx">
+          <text><![CDATA[not("Sore throat", "cough", "feeling of nasal stuffiness", "yellowish-greenish nasal discharge with odor")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16a8ot0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_101uf12">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-700599379-1">
+        <inputEntry id="UnaryTests_0wdarko">
+          <text><![CDATA["Persistent Cough"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wz2c34">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16eh66q">
+          <text><![CDATA["true"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dly63b">
+          <text><![CDATA["Weight loss", "Appetite Loss", "Fever", "Coughing up blood", "Night Sweats"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15a6jws">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pnb690">
+          <text><![CDATA["advicefromhuman"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1ux2y85">
+    <extensionElements>
+      <biodi:bounds x="747" y="150" width="180" height="80" />
+      <biodi:edge source="decision_2">
+        <biodi:waypoints x="673" y="291" />
+        <biodi:waypoints x="804" y="230" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredDecision href="#decision_2" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0kkbo7u">
+      <output id="OutputClause_0xinfwa" typeRef="string" />
+    </decisionTable>
+  </decision>
+</definitions>
