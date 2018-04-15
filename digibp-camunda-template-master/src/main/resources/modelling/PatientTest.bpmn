@@ -62,6 +62,10 @@
         <bpmn:sourceRef>DataStoreReference_0dsawfr</bpmn:sourceRef>
         <bpmn:targetRef>Property_08941nx</bpmn:targetRef>
       </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_0dk09c1">
+        <bpmn:sourceRef>DataObjectReference_102tt2b</bpmn:sourceRef>
+        <bpmn:targetRef>Property_08941nx</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
     </bpmn:userTask>
     <bpmn:exclusiveGateway id="ExclusiveGateway_020v9dk" default="SequenceFlow_1cgzseq">
       <bpmn:incoming>SequenceFlow_0uzaow4</bpmn:incoming>
@@ -293,6 +297,8 @@
     <bpmn:sequenceFlow id="SequenceFlow_013ggmv" sourceRef="Task_1o13mg5" targetRef="ExclusiveGateway_0ke321q" />
     <bpmn:sequenceFlow id="SequenceFlow_0u1uuuy" sourceRef="Task_1rgfyg9" targetRef="Task_0nfcfll" />
     <bpmn:sequenceFlow id="SequenceFlow_1r2e04m" sourceRef="Task_0nrrsxb" targetRef="EndEvent_0jy04cy" />
+    <bpmn:dataObjectReference id="DataObjectReference_102tt2b" dataObjectRef="DataObject_1kakppe" />
+    <bpmn:dataObject id="DataObject_1kakppe" />
     <bpmn:textAnnotation id="TextAnnotation_1xs1nq8">
       <bpmn:text>Question catalogue</bpmn:text>
     </bpmn:textAnnotation>
@@ -825,6 +831,16 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="2280" y="1197.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="DataObjectReference_102tt2b_di" bpmnElement="DataObjectReference_102tt2b">
+        <dc:Bounds x="893" y="553" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="911" y="606" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0dk09c1_di" bpmnElement="DataInputAssociation_0dk09c1">
+        <di:waypoint xsi:type="dc:Point" x="911" y="603" />
+        <di:waypoint xsi:type="dc:Point" x="909" y="667" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
