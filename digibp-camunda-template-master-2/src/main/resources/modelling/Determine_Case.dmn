@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_151qo2x" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_2" name="Determine_Case">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="First_Symptom" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">
+          <text>First_Symptom</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1ybpn4z" label="First_Symptom">
+        <inputExpression id="LiteralExpression_1rtnkqu" typeRef="string">
+          <text>Second_Symptom</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_06n56l6" label="Third_Symptom">
+        <inputExpression id="LiteralExpression_1ffvklk" typeRef="string">
+          <text>Third_Symptom</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1yliy4j" label="Fourth_Symptom">
+        <inputExpression id="LiteralExpression_1lmdgmq" typeRef="string">
+          <text>Fourth_Symptom</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="Disease" name="Disease" typeRef="string" />
+      <rule id="row-761451206-1">
+        <description>Visit doctor</description>
+        <inputEntry id="UnaryTests_0ux80ir">
+          <text><![CDATA["High fever", "Fever", "Temperature", "Chills", "Sweating"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bynn1d">
+          <text><![CDATA["Muscle pain", "Aching limbs", "Headaches", "Weakness", "Tiredness", "Feeling ill"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14zeptd">
+          <text><![CDATA["Cough", "Dry cough", "Chesty cough", "Cold", "Congested", "Congested nose", "Sore throat"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0csj8ep">
+          <text><![CDATA["Nausea", "Vomiting", "Vomit", "Diarrhoea"]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15z5yf6">
+          <text><![CDATA["Intestinal influenza"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-761451206-2">
+        <description>Visit doctor</description>
+        <inputEntry id="UnaryTests_18r5rfz">
+          <text><![CDATA["High fever", "Fever", "Temperature", "Chills", "Sweating"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04l89tz">
+          <text><![CDATA["Muscle pain", "Aching limbs", "Headaches", "Weakness", "Tiredness", "Feeling ill"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lh5ktt">
+          <text><![CDATA["Cough", "Dry cough", "Chesty cough", "Cold", "Congested", "Congested nose", "Sore throat"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1va4ea1">
+          <text><![CDATA[not("Nausea", "Vomiting", "Vomit", "Diarrhoea")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vjkwto">
+          <text><![CDATA["Influenza"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-162278552-2">
+        <description>Get drugs</description>
+        <inputEntry id="UnaryTests_07gsqon">
+          <text><![CDATA["High fever", "Fever", "Temperature", "Chills", "Sweating"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lu8mpm">
+          <text><![CDATA[not("Muscle pain", "Aching limbs", "Headaches", "Weakness", "Tiredness", "Feeling ill")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18muh0p">
+          <text><![CDATA["Cough", "Dry cough", "Chesty cough", "Cold", "Congested", "Congested nose", "Sore throat"]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w0m21c">
+          <text><![CDATA[not("Nausea", "Vomiting", "Vomit", "Diarrhoea")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03fw6z7">
+          <text><![CDATA["Cold"]]></text>
+        </outputEntry>
+      </rule>
+      <rule id="row-162278552-3">
+        <description>Advise from human</description>
+        <inputEntry id="UnaryTests_0ujn0kx">
+          <text><![CDATA[not("High fever", "Fever", "Temperature", "Chills", "Sweating")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00isjkc">
+          <text><![CDATA[not("Muscle pain", "Aching limbs", "Headaches", "Weakness", "Tiredness", "Feeling ill")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12ljg56">
+          <text><![CDATA[not("Cough", "Dry cough", "Chesty cough", "Cold", "Congested", "Congested nose", "Sore throat")]]></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0acgy6t">
+          <text><![CDATA[not("Nausea", "Vomiting", "Vomit", "Diarrhoea")]]></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jsxip9">
+          <text><![CDATA["Nothing_Applies"]]></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
