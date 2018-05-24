@@ -38,8 +38,7 @@
         <bpmn:targetRef>DataStoreReference_0dsawfr</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:businessRuleTask>
-    <bpmn:sequenceFlow id="SequenceFlow_11sg901" sourceRef="StartEvent_1" targetRef="Task_16p2ery" />
-    <bpmn:sequenceFlow id="SequenceFlow_0bmntpz" sourceRef="Task_16p2ery" targetRef="ServiceTask_06g40cp" />
+    <bpmn:sequenceFlow id="SequenceFlow_11sg901" sourceRef="StartEvent_1" targetRef="ServiceTask_06g40cp" />
     <bpmn:sequenceFlow id="SequenceFlow_1tdz05o" sourceRef="Task_0ppf4p2" targetRef="ExclusiveGateway_06fh304" />
     <bpmn:sequenceFlow id="SequenceFlow_1y02hv7" name="Emergency" sourceRef="ExclusiveGateway_06fh304" targetRef="Task_182j5mh">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression"><![CDATA[#{action=='Emergency'}]]></bpmn:conditionExpression>
@@ -193,26 +192,6 @@ header;]]></camunda:script>
       <bpmn:incoming>SequenceFlow_1cgzseq</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0nn2zfv</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Task_16p2ery" name="Identify the patient">
-      <bpmn:extensionElements>
-        <camunda:inputOutput>
-          <camunda:inputParameter name="Input_3aujo3h">Type_Of_Problem</camunda:inputParameter>
-        </camunda:inputOutput>
-        <camunda:formData>
-          <camunda:formField id="Patient_Firstname" label="Firstname" type="string" />
-          <camunda:formField id="Patient_Lastname" label="Lastname" type="string" />
-          <camunda:formField id="Type_Of_Problem" label="Patient Problem" type="enum">
-            <camunda:value id="Disease" name="Disease" />
-            <camunda:value id="Accident" name="Accident" />
-          </camunda:formField>
-          <camunda:formField id="text" label="Description of what the patient has" type="string" />
-          <camunda:formField id="sex" label="Sex" type="string" />
-          <camunda:formField id="age" label="Age" type="string" />
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_11sg901</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0bmntpz</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:sequenceFlow id="SequenceFlow_11ti8sw" sourceRef="ServiceTask_06g40cp" targetRef="Task_0ppf4p2" />
     <bpmn:serviceTask id="ServiceTask_06g40cp" name="Determine the case" camunda:modelerTemplate="digibp.connector.http.body" camunda:resultVariable="Disease">
       <bpmn:extensionElements>
@@ -238,7 +217,7 @@ Type_Of_Problem= object.Type_Of_Problem;]]></camunda:script>
           <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
       </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0bmntpz</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_11sg901</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_11ti8sw</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:textAnnotation id="TextAnnotation_0ygjqp6">
@@ -273,18 +252,10 @@ Type_Of_Problem= object.Type_Of_Problem;]]></camunda:script>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_11sg901_di" bpmnElement="SequenceFlow_11sg901">
-        <di:waypoint xsi:type="dc:Point" x="194" y="301" />
-        <di:waypoint xsi:type="dc:Point" x="263" y="301" />
+        <di:waypoint xsi:type="dc:Point" x="192" y="307" />
+        <di:waypoint xsi:type="dc:Point" x="455" y="402" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="184" y="280" width="90" height="13" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="SequenceFlow_0bmntpz_di" bpmnElement="SequenceFlow_0bmntpz">
-        <di:waypoint xsi:type="dc:Point" x="363" y="301" />
-        <di:waypoint xsi:type="dc:Point" x="455" y="301" />
-        <di:waypoint xsi:type="dc:Point" x="455" y="399" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="364" y="279.5" width="90" height="13" />
+          <dc:Bounds x="278.5" y="333" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ExclusiveGateway_06fh304_di" bpmnElement="ExclusiveGateway_06fh304" isMarkerVisible="true">
@@ -531,9 +502,6 @@ Type_Of_Problem= object.Type_Of_Problem;]]></camunda:script>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_1ermlcx_di" bpmnElement="Task_1n25jd3">
         <dc:Bounds x="1240" y="961" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="UserTask_02hoyp8_di" bpmnElement="Task_16p2ery">
-        <dc:Bounds x="263" y="261" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="ServiceTask_06g40cp_di" bpmnElement="ServiceTask_06g40cp">
         <dc:Bounds x="405" y="402" width="100" height="80" />
