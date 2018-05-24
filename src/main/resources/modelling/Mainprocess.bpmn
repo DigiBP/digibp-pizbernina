@@ -220,15 +220,6 @@ header;]]></camunda:script>
       <bpmn:incoming>SequenceFlow_0fa1yag</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0xkrdzr</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Task_19viwel" name="Recommend on-prescription drug">
-      <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="x" label="Are drugs needed?" type="string" />
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0ia8aqq</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0gdniuz</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:endEvent id="EndEvent_0jy04cy">
       <bpmn:incoming>SequenceFlow_1r2e04m</bpmn:incoming>
     </bpmn:endEvent>
@@ -269,6 +260,10 @@ JSON.stringify(out);]]></camunda:script>
       <bpmn:outgoing>SequenceFlow_1wrf640</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1wrf640" sourceRef="ServiceTask_1veamps" targetRef="ExclusiveGateway_1lip0ni" />
+    <bpmn:task id="Task_19viwel" name="Recommend on-prescription drug">
+      <bpmn:incoming>SequenceFlow_0ia8aqq</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0gdniuz</bpmn:outgoing>
+    </bpmn:task>
     <bpmn:textAnnotation id="TextAnnotation_0ygjqp6">
       <bpmn:text>Data storage</bpmn:text>
     </bpmn:textAnnotation>
@@ -452,9 +447,6 @@ JSON.stringify(out);]]></camunda:script>
           <dc:Bounds x="1499" y="552" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_0shv0mc_di" bpmnElement="Task_19viwel">
-        <dc:Bounds x="1273" y="662" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="DataStoreReference_0dsawfr_di" bpmnElement="DataStoreReference_0dsawfr">
         <dc:Bounds x="687" y="984" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -575,6 +567,9 @@ JSON.stringify(out);]]></camunda:script>
           <dc:Bounds x="1585" y="680" width="0" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1n7rpro_di" bpmnElement="Task_19viwel">
+        <dc:Bounds x="1273" y="662" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
