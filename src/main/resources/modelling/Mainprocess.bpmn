@@ -209,7 +209,7 @@ header;]]></camunda:script>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="JavaScript"><![CDATA[out = JSON.stringify({"key": "value"});]]></camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/igkbxek97tm8rt94bfxc2hhuu2ftdxsv</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/l12kk22a7y5pbiet2vj121tjytfegw12</camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
             </camunda:outputParameter>
