@@ -209,7 +209,7 @@ header;]]></camunda:script>
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="JavaScript"><![CDATA[out = JSON.stringify({"key": "value"});]]></camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="url">https://hook.integromat.com/igkbxek97tm8rt94bfxc2hhuu2ftdxsv</camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/l12kk22a7y5pbiet2vj121tjytfegw12</camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
             </camunda:outputParameter>
@@ -220,15 +220,6 @@ header;]]></camunda:script>
       <bpmn:incoming>SequenceFlow_0fa1yag</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0xkrdzr</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:userTask id="Task_19viwel" name="Recommend on-prescription drug">
-      <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="x" label="Are drugs needed?" type="string" />
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_0ia8aqq</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_0gdniuz</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:endEvent id="EndEvent_0jy04cy">
       <bpmn:incoming>SequenceFlow_1r2e04m</bpmn:incoming>
     </bpmn:endEvent>
@@ -253,11 +244,10 @@ header;]]></camunda:script>
 header.put("Content-Type","application/json");
 header;]]></camunda:script>
             </camunda:inputParameter>
-            <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript"><![CDATA[var out = { "diseasename":diseasename};
-JSON.stringify(out);]]></camunda:script>
-            </camunda:inputParameter>
             <camunda:inputParameter name="url">https://hook.integromat.com/89lw0nfm2h7dakgx7ovhrhptd2gs6ode</camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[var out = { "diseasename":diseasename, "diseaseid":diseaseid};JSON.stringify(out);]]></camunda:script>
+            </camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
             </camunda:outputParameter>
@@ -269,6 +259,10 @@ JSON.stringify(out);]]></camunda:script>
       <bpmn:outgoing>SequenceFlow_1wrf640</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1wrf640" sourceRef="ServiceTask_1veamps" targetRef="ExclusiveGateway_1lip0ni" />
+    <bpmn:businessRuleTask id="Task_19viwel" name="Find matching drug" camunda:resultVariable="drug" camunda:decisionRef="decision_2" camunda:mapDecisionResult="singleEntry">
+      <bpmn:incoming>SequenceFlow_0ia8aqq</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0gdniuz</bpmn:outgoing>
+    </bpmn:businessRuleTask>
     <bpmn:textAnnotation id="TextAnnotation_0ygjqp6">
       <bpmn:text>Data storage</bpmn:text>
     </bpmn:textAnnotation>
@@ -283,7 +277,7 @@ JSON.stringify(out);]]></camunda:script>
         <dc:Bounds x="108" y="180" width="1934" height="990" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_049v4pr_di" bpmnElement="Participant_049v4pr">
-        <dc:Bounds x="128" y="-118" width="1712" height="240" />
+        <dc:Bounds x="128" y="-118" width="1907" height="245" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_1l6a68y_di" bpmnElement="StartEvent_1">
         <dc:Bounds x="158" y="283" width="36" height="36" />
@@ -292,12 +286,12 @@ JSON.stringify(out);]]></camunda:script>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_0r5h7bo_di" bpmnElement="MessageFlow_0r5h7bo">
-        <di:waypoint xsi:type="dc:Point" x="299" y="122" />
-        <di:waypoint xsi:type="dc:Point" x="299" y="206" />
+        <di:waypoint xsi:type="dc:Point" x="318" y="127" />
+        <di:waypoint xsi:type="dc:Point" x="318" y="206" />
         <di:waypoint xsi:type="dc:Point" x="174" y="206" />
         <di:waypoint xsi:type="dc:Point" x="174" y="284" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="191.5" y="184.5" width="90" height="13" />
+          <dc:Bounds x="201" y="184.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_11sg901_di" bpmnElement="SequenceFlow_11sg901">
@@ -427,7 +421,7 @@ JSON.stringify(out);]]></camunda:script>
         <di:waypoint xsi:type="dc:Point" x="1199" y="702" />
         <di:waypoint xsi:type="dc:Point" x="1273" y="702" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1194.718309859155" y="706" width="44" height="13" />
+          <dc:Bounds x="1195" y="706" width="44" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1cgzseq_di" bpmnElement="SequenceFlow_1cgzseq">
@@ -452,9 +446,6 @@ JSON.stringify(out);]]></camunda:script>
           <dc:Bounds x="1499" y="552" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="UserTask_0shv0mc_di" bpmnElement="Task_19viwel">
-        <dc:Bounds x="1273" y="662" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="DataStoreReference_0dsawfr_di" bpmnElement="DataStoreReference_0dsawfr">
         <dc:Bounds x="687" y="984" width="50" height="50" />
         <bpmndi:BPMNLabel>
@@ -506,7 +497,7 @@ JSON.stringify(out);]]></camunda:script>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0g4ti7g_di" bpmnElement="Participant_0g4ti7g">
-        <dc:Bounds x="101" y="1208" width="1743" height="185" />
+        <dc:Bounds x="101" y="1204" width="1938" height="189" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BusinessRuleTask_0gao8ku_di" bpmnElement="Task_0ppf4p2">
         <dc:Bounds x="405" y="533" width="100" height="80" />
@@ -542,9 +533,9 @@ JSON.stringify(out);]]></camunda:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="MessageFlow_04ponmf_di" bpmnElement="MessageFlow_04ponmf">
         <di:waypoint xsi:type="dc:Point" x="1786" y="662" />
-        <di:waypoint xsi:type="dc:Point" x="1786" y="122" />
+        <di:waypoint xsi:type="dc:Point" x="1786" y="127" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1756" y="385.5" width="90" height="13" />
+          <dc:Bounds x="1756" y="388" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ServiceTask_1ermlcx_di" bpmnElement="Task_1n25jd3">
@@ -575,6 +566,9 @@ JSON.stringify(out);]]></camunda:script>
           <dc:Bounds x="1585" y="680" width="0" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BusinessRuleTask_1i8o4wx_di" bpmnElement="Task_19viwel">
+        <dc:Bounds x="1273" y="662" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
