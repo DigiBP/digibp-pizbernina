@@ -11,26 +11,28 @@
       <rule id="row-162278552-2">
         <description></description>
         <inputEntry id="UnaryTests_07gsqon">
-          <text><![CDATA["c_55"]]></text>
+          <text><![CDATA["c_87"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_03fw6z7">
-          <text><![CDATA["Aspirin"]]></text>
+          <text><![CDATA["you should get Phenylephrin and Bexin"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-162278552-5">
         <inputEntry id="UnaryTests_1d26qz6">
-          <text><![CDATA["c_138"]]></text>
+          <text><![CDATA["c_10"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1v4xnm4">
-          <text><![CDATA["camomile tea"]]></text>
+          <text><![CDATA["you should pay attention to your fluid intake, energy intake and physical rest or bed rest.
+"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-553817768-2">
         <inputEntry id="UnaryTests_1vkbkcy">
-          <text><![CDATA["c_669"]]></text>
+          <text><![CDATA["c_670"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13htnbk">
-          <text><![CDATA["throat spray"]]></text>
+          <text><![CDATA["remove the foreign matter
+"]]></text>
         </outputEntry>
       </rule>
     </decisionTable>
