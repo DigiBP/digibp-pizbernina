@@ -4,10 +4,10 @@
     <decisionTable id="decisionTable">
       <input id="input1" label="diseaseid" camunda:inputVariable="">
         <inputExpression id="inputExpression1" typeRef="string">
-          <text>Disease</text>
+          <text>diseaseid</text>
         </inputExpression>
       </input>
-      <output id="output1" label="drug" name="Drug" typeRef="string" />
+      <output id="output1" label="drug" name="drug" typeRef="string" />
       <rule id="row-162278552-2">
         <description></description>
         <inputEntry id="UnaryTests_07gsqon">
