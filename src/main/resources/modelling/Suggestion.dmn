@@ -14,7 +14,7 @@
           <text><![CDATA["c_87"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_03fw6z7">
-          <text><![CDATA["You should get Phenylephrin and Bexin."]]></text>
+          <text><![CDATA["You should get Phenylephrin and Bexin"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-162278552-5">
@@ -22,8 +22,7 @@
           <text><![CDATA["c_10"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1v4xnm4">
-          <text><![CDATA["You should pay attention to your fluid intake, energy intake and physical rest or bed rest.
-"]]></text>
+          <text><![CDATA["You should pay attention to your fluid intake, energy intake and physical rest or bed rest"]]></text>
         </outputEntry>
       </rule>
       <rule id="row-553817768-2">
@@ -31,8 +30,7 @@
           <text><![CDATA["c_670"]]></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_13htnbk">
-          <text><![CDATA["Remove the foreign matter.
-"]]></text>
+          <text><![CDATA["Remove the foreign matter"]]></text>
         </outputEntry>
       </rule>
     </decisionTable>
