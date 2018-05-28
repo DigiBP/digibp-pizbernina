@@ -25,14 +25,6 @@
           <text><![CDATA["camomile tea"]]></text>
         </outputEntry>
       </rule>
-      <rule id="row-553817768-1">
-        <inputEntry id="UnaryTests_19zkroc">
-          <text><![CDATA[""]]></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_11bo3p8">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
 </definitions>

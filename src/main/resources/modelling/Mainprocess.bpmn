@@ -246,7 +246,7 @@ header;]]></camunda:script>
             </camunda:inputParameter>
             <camunda:inputParameter name="url">https://hook.integromat.com/89lw0nfm2h7dakgx7ovhrhptd2gs6ode</camunda:inputParameter>
             <camunda:inputParameter name="payload">
-              <camunda:script scriptFormat="JavaScript"><![CDATA[var out = { "diseasename":diseasename};JSON.stringify(out);]]></camunda:script>
+              <camunda:script scriptFormat="JavaScript"><![CDATA[var out = { "diseasename":diseasename, "diseaseid":diseaseid};JSON.stringify(out);]]></camunda:script>
             </camunda:inputParameter>
             <camunda:outputParameter name="processVariableResponse">
               <camunda:script scriptFormat="JavaScript">response;</camunda:script>
