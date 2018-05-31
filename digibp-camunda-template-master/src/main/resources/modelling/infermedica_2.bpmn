@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+  <bpmn:process id="service-task-api" name="service-task-api" isExecutable="true">
+    <bpmn:startEvent id="Task_001uzuzg" name="Symptoms initiated">
+      <bpmn:extensionElements>
+        <camunda:formData />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_0r7z03v</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0r7z03v" sourceRef="Task_001uzuzg" targetRef="Task_12x11ag" />
+    <bpmn:serviceTask id="Task_0d430yd" name="Receive Symptoms" camunda:modelerTemplate="digibp.connector.http.body" camunda:expression="${true}">
+      <bpmn:extensionElements>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:map>
+                <camunda:entry key="Content-Type">application/json</camunda:entry>
+              </camunda:map>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[out = JSON.stringify({
+									"text": text,
+"businessKey": execution.getBusinessKey()
+                  });]]></camunda:script>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://hook.integromat.com/il6dqrr6kgv1ffscbjk4mj1j3z89dadv?businessKey=${execution.getBusinessKey()}</camunda:inputParameter>
+            <camunda:outputParameter name="name">
+              <camunda:script scriptFormat="JavaScript">response;</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0mc2eo1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1i8tp38</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Task_13y70hj" name="Inspect Symptoms" camunda:assignee="demo" camunda:candidateUsers="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="name" label="name" type="string" />
+        </camunda:formData>
+        <camunda:connector>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="method">POST</camunda:inputParameter>
+            <camunda:inputParameter name="headers">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[var header = new java.util.HashMap();
+header.put("Content-Type","application/json");
+header;]]></camunda:script>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="payload">
+              <camunda:script scriptFormat="JavaScript"><![CDATA[out = JSON.stringify({"key": "value"});]]></camunda:script>
+            </camunda:inputParameter>
+            <camunda:inputParameter name="url">https://api.infermedica.com/v2/diagnosis</camunda:inputParameter>
+            <camunda:outputParameter name="processVariableResponse">
+              <camunda:script scriptFormat="JavaScript">response;</camunda:script>
+            </camunda:outputParameter>
+          </camunda:inputOutput>
+          <camunda:connectorId>http-connector</camunda:connectorId>
+        </camunda:connector>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1i8tp38</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0xmit1i</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1i8tp38" sourceRef="Task_0d430yd" targetRef="Task_13y70hj" />
+    <bpmn:endEvent id="EndEvent_0gpn05a" name="Echo Inspected">
+      <bpmn:incoming>SequenceFlow_0xmit1i</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0xmit1i" sourceRef="Task_13y70hj" targetRef="EndEvent_0gpn05a" />
+    <bpmn:userTask id="Task_12x11ag" name="User Input">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="text" label="text" type="string">
+            <camunda:properties>
+              <camunda:property id="Property_034isav" />
+            </camunda:properties>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_0r7z03v</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0mc2eo1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0mc2eo1" sourceRef="Task_12x11ag" targetRef="Task_0d430yd" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="service-task-api">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="Task_001uzuzg">
+        <dc:Bounds x="42" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="36" y="138" width="52" height="25" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0r7z03v_di" bpmnElement="SequenceFlow_0r7z03v">
+        <di:waypoint xsi:type="dc:Point" x="78" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="116" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="52" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1a8z2uc_di" bpmnElement="Task_0d430yd">
+        <dc:Bounds x="269" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_0e8oyub_di" bpmnElement="Task_13y70hj">
+        <dc:Bounds x="464" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1i8tp38_di" bpmnElement="SequenceFlow_1i8tp38">
+        <di:waypoint xsi:type="dc:Point" x="369" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="464" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="371.5" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0gpn05a_di" bpmnElement="EndEvent_0gpn05a">
+        <dc:Bounds x="624.1635094715853" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="605" y="141" width="76" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0xmit1i_di" bpmnElement="SequenceFlow_0xmit1i">
+        <di:waypoint xsi:type="dc:Point" x="564" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="624" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="594" y="98" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_172x5ig_di" bpmnElement="Task_12x11ag">
+        <dc:Bounds x="116" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0mc2eo1_di" bpmnElement="SequenceFlow_0mc2eo1">
+        <di:waypoint xsi:type="dc:Point" x="216" y="120" />
+        <di:waypoint xsi:type="dc:Point" x="269" y="120" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="197.5" y="98.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
