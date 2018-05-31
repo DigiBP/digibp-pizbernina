@@ -63,18 +63,6 @@
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="SequenceFlow_199e559" sourceRef="Task_1dxh35f" targetRef="ExclusiveGateway_16k8kve" />
     <bpmn:sequenceFlow id="SequenceFlow_0nn2zfv" sourceRef="Task_1n25jd3" targetRef="ExclusiveGateway_1lip0ni" />
-    <bpmn:userTask id="Task_182j5mh" name="Check if transport is needed">
-      <bpmn:extensionElements>
-        <camunda:formData>
-          <camunda:formField id="Transport" label="Transport to doctor or hospital needed?" type="enum">
-            <camunda:value id="Value_39up374" name="Yes" />
-            <camunda:value id="Value_0cktk8v" name="No" />
-          </camunda:formField>
-        </camunda:formData>
-      </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_1y02hv7</bpmn:incoming>
-      <bpmn:outgoing>SequenceFlow_1ny3len</bpmn:outgoing>
-    </bpmn:userTask>
     <bpmn:endEvent id="EndEvent_17p69ji">
       <bpmn:incoming>SequenceFlow_1vfrgqd</bpmn:incoming>
     </bpmn:endEvent>
@@ -169,7 +157,7 @@ header;]]></camunda:script>
       <bpmn:outgoing>SequenceFlow_0nn2zfv</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_11ti8sw" sourceRef="ServiceTask_06g40cp" targetRef="Task_0ppf4p2" />
-    <bpmn:serviceTask id="ServiceTask_06g40cp" name="Determine the case" camunda:modelerTemplate="digibp.connector.http.body" camunda:resultVariable="Disease">
+    <bpmn:serviceTask id="ServiceTask_06g40cp" name="Determine the severity" camunda:modelerTemplate="digibp.connector.http.body" camunda:resultVariable="Disease">
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
@@ -263,6 +251,18 @@ header;]]></camunda:script>
       <bpmn:incoming>SequenceFlow_0ia8aqq</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0gdniuz</bpmn:outgoing>
     </bpmn:businessRuleTask>
+    <bpmn:userTask id="Task_182j5mh" name="Check if transport is needed">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="Transport" label="Transport to doctor or hospital needed?" type="enum">
+            <camunda:value id="Value_39up374" name="Yes" />
+            <camunda:value id="Value_0cktk8v" name="No" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_1y02hv7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ny3len</bpmn:outgoing>
+    </bpmn:userTask>
     <bpmn:textAnnotation id="TextAnnotation_0ygjqp6">
       <bpmn:text>Data storage</bpmn:text>
     </bpmn:textAnnotation>
@@ -320,7 +320,7 @@ header;]]></camunda:script>
       <bpmndi:BPMNEdge id="SequenceFlow_1y02hv7_di" bpmnElement="SequenceFlow_1y02hv7">
         <di:waypoint xsi:type="dc:Point" x="595" y="548" />
         <di:waypoint xsi:type="dc:Point" x="595" y="300" />
-        <di:waypoint xsi:type="dc:Point" x="836" y="300" />
+        <di:waypoint xsi:type="dc:Point" x="632" y="300" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="602" y="506" width="57" height="13" />
         </bpmndi:BPMNLabel>
@@ -346,10 +346,10 @@ header;]]></camunda:script>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1ny3len_di" bpmnElement="SequenceFlow_1ny3len">
-        <di:waypoint xsi:type="dc:Point" x="936" y="301" />
+        <di:waypoint xsi:type="dc:Point" x="732" y="301" />
         <di:waypoint xsi:type="dc:Point" x="1004" y="301" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="925" y="279.5" width="90" height="13" />
+          <dc:Bounds x="823" y="279.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1iy42j0_di" bpmnElement="SequenceFlow_1iy42j0">
@@ -503,7 +503,7 @@ header;]]></camunda:script>
         <dc:Bounds x="405" y="533" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="UserTask_1ul3asz_di" bpmnElement="Task_182j5mh">
-        <dc:Bounds x="836" y="261" width="100" height="80" />
+        <dc:Bounds x="632" y="261" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1lpovw0_di" bpmnElement="SequenceFlow_1lpovw0">
         <di:waypoint xsi:type="dc:Point" x="1357" y="301" />
