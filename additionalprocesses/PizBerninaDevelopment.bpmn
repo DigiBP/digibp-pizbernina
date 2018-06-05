@@ -16,7 +16,8 @@
     <bpmn:messageFlow id="MessageFlow_1ghu5b9" sourceRef="Task_07mw3yk" targetRef="Participant_0aceyok" />
     <bpmn:messageFlow id="MessageFlow_1m4bf1p" sourceRef="Task_1x1n9bm" targetRef="Participant_0z74npj" />
     <bpmn:messageFlow id="MessageFlow_1te17m3" sourceRef="Participant_0z74npj" targetRef="Task_1x1n9bm" />
-    <bpmn:messageFlow id="MessageFlow_0b11ipl" sourceRef="Task_0nrrsxb" targetRef="Participant_0l9vamd" />
+    <bpmn:messageFlow id="MessageFlow_0b11ipl" sourceRef="Task_0nrrsxb" targetRef="Participant_0g4ti7g" />
+    <bpmn:messageFlow id="MessageFlow_0fvsisu" sourceRef="Task_0nrrsxb" targetRef="Participant_0l9vamd" />
   </bpmn:collaboration>
   <bpmn:process id="PizBerninaDevelopment" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Start Event">
@@ -756,10 +757,10 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="MessageFlow_0b11ipl_di" bpmnElement="MessageFlow_0b11ipl">
-        <di:waypoint xsi:type="dc:Point" x="2305" y="742" />
-        <di:waypoint xsi:type="dc:Point" x="2305" y="1413" />
+        <di:waypoint xsi:type="dc:Point" x="2284" y="742" />
+        <di:waypoint xsi:type="dc:Point" x="2284" y="1188" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2275" y="1071" width="90" height="13" />
+          <dc:Bounds x="2254" y="958.5" width="90" height="13" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="BusinessRuleTask_0gao8ku_di" bpmnElement="Task_0ppf4p2">
@@ -808,6 +809,13 @@
       <bpmndi:BPMNShape id="Task_1bgg36a_di" bpmnElement="Task_07mw3yk">
         <dc:Bounds x="1692" y="710" width="100" height="80" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_0fvsisu_di" bpmnElement="MessageFlow_0fvsisu">
+        <di:waypoint xsi:type="dc:Point" x="2302" y="742" />
+        <di:waypoint xsi:type="dc:Point" x="2302" y="1413" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2317" y="1071.5" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
